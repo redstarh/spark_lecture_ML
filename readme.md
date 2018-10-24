@@ -45,12 +45,13 @@ val websites = sc.parallelize(Seq("Apache Spark", "Scala")).map(pwsbc.value).col
 ```scala
 val words = sc.textFile("README.md").flatMap(line => line.split(' '))
 //Double = 5.73015873015873
+words.foreach(println)
+words.map(word => word.length).foreach(println)
+words.map(word => word.length).reduce(x,y => x+y).toDouble
 ```
 > accumulator 로 구하기
 ```scala
 import org.apache.spark.Accumulator
-//TODO:
-```
 
 # 11장
 ## DataFrame 실습
