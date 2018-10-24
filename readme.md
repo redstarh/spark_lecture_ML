@@ -7,6 +7,9 @@ localhost (root / root1234)
 ```shell
 usermod -G hadoop skcc
 su - skcc
+
+su - hadoop
+hadoop fs -chmod -R 777 /
 ```
 
 > spark 실행
