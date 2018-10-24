@@ -46,10 +46,10 @@ df.take(10).foreach(println)
 df.take(10).show //오류 
 
 // dataframe을 리턴하는 것은 limit
-df.limit(10).show
+df.limit(10).show //limit는 RDD 를 
 
 //아래는 같음
-df.take(1)
+df.take(1) // take는 Array를 반환
 df.first
 
 //sepal length의 평균
