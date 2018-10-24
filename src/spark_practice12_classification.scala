@@ -58,7 +58,7 @@ val featureIndexer = new VectorIndexer().setInputCol("features").setOutputCol("i
 
    default value
 
-    maxCategory=20
+    maxCategory= 사용자 지정 2이상 
     impurity="gini"
         impurity={gini,entropy}
     maxBins=32
