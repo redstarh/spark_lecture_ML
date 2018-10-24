@@ -24,7 +24,7 @@ for (i <- 1 to iters) {
   val contribs = links.join(ranks).values.flatMap{ case (urls, rank) =>
     val size = urls.size
     urls.map(url => (url, rank / size))
-  }
+   }
   //새로운 rank 계산
   ranks = contribs.reduceByKey(_ + _).mapValues(0.15 + 0.85 * _)
 
