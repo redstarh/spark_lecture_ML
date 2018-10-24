@@ -3,11 +3,10 @@
 
 localhost (root / root1234)
 
-su - skcc
-
 > skcc user 그룹 변경
 ```shell
 usermod -G hadoop skcc
+su - skcc
 ```
 
 > spark 실행
