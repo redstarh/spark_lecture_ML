@@ -33,9 +33,9 @@ hadoop fs -put /usr/local/skcc/spark-2.3.2-bin-hadoop2.7/README.md
 //2. pws를 참조하여 key에 해당하는 값을 참조, map partition RDD 생성
 //3. collect로 array[String] 생성
 val pws = Map("Apache Spark" -> "http://spark.apache.org/", "Scala" -> "http://www.scala-lang.org/")
-
+val pwsbc = sc.broadcast(pws) # boardcast 처리시
 val websites = sc.parallelize(Seq("Apache Spark", "Scala")).map(pws).collect
-
+val websites = sc.parallelize(Seq("Apache Spark", "Scala")).map(pwsbc.value).collect # boardcast 처리시
 //pws가 대량의 데이터일 경우 속도저하 유발함. 분산처리하는 모든 executor에 pws 네트워크전송 유발
 
 ```
